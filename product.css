@@ -1,0 +1,608 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#logoimg {
+    width: 100px;
+    height: 100px;
+    margin-left: 150px;
+}
+
+#headercontent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav_bar {
+    display: flex;
+    margin: 20px;
+    gap: 40px;
+    font-size: 1.5rem;
+    font-weight: 1000;
+    margin-right: 200px;
+    position: relative;
+}
+
+#headeranchor {
+    text-decoration: none;
+    color: rgb(50, 49, 49);
+}
+
+#headeranchor:hover {
+    color: rgb(81, 81, 240);
+    text-decoration: underline red;
+}
+
+#goToFooter {
+    text-decoration: none;
+    color: rgb(50, 49, 49);
+}
+
+#goToFooter:hover {
+    color: rgb(81, 81, 240);
+    text-decoration: underline red;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_button {
+    cursor: pointer;
+}
+
+.dropdown_content {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown_content a {
+    color: rgb(50, 49, 49);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown_content a:hover {
+    background-color: rgb(240, 240, 240);
+    color: rgb(81, 81, 240);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+
+/* Responsive Adjustments */
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) and (min-width:770px) {
+    #headercontent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px; /* Adjust padding to match 1440px design */
+    }
+
+    #logoimg {
+        width: 90px; /* Slightly reduce logo size for better scaling */
+        height: 90px;
+        margin-left: 40px; /* Adjust margin to match 1440px spacing */
+    }
+
+    .nav_bar {
+        gap: 30px; /* Adjust gap to maintain similar spacing */
+        font-size: 1.5rem; /* Match font size with 1440px design */
+        margin-right: 100px; /* Adjust margin for alignment */
+    }
+
+    #headeranchor {
+        font-size: 1.5rem; /* Match text size for consistency */
+    }
+
+    /* Ensure dropdown behaves similarly */
+    .dropdown_content {
+        min-width: 200px; /* Adjust dropdown width */
+    }
+
+    .dropdown_content a {
+        font-size: 1rem; /* Keep font size consistent */
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #headercontent {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    #logoimg {
+        margin-left: 20px; /* Adjust margin for smaller screens */
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin: 10px;
+        cursor: pointer;
+        color: rgb(50, 49, 49);
+        position: relative;
+    }
+
+    .hamburger-menu:hover {
+        color: rgb(81, 81, 240);
+    }
+    #headeranchor{
+        padding-top: -100px;
+    }
+
+    /* Dropdown styles for small screens */
+    .nav_bar {
+        display: none; /* Hide navigation by default */
+        position: absolute; /* Position dropdown absolutely to the header */
+        top: 60px; /* Place it just below the header */
+        right: -140px; /* Align it to the right side */
+        width: 18%; /* Set the width to 40% */
+        background-color: white;
+        flex-direction: column;
+        border: 1px solid #ddd;
+        padding: -100px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    .nav_bar.show {
+        display: flex; /* Show the dropdown when toggled */
+    }
+
+    .nav_bar a {
+        padding: 10px 15px;
+        text-align: left;
+        font-size: 1rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    .nav_bar a:hover {
+        background-color: rgb(240, 240, 240);
+        color: rgb(81, 81, 240);
+    }
+    
+    .dropdown a{
+        padding: 10px 15px;
+        text-align: left;
+        font-size: 1rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown_content a:hover {
+        background-color: rgb(240, 240, 240);
+        color: rgb(81, 81, 240);
+    }
+}
+@media (max-width:450px) {
+    .nav_bar {
+        display: none; /* Hide navigation by default */
+        position: absolute; /* Position dropdown absolutely to the header */
+        top: 60px; /* Place it just below the header */
+        right: -140px; /* Align it to the right side */
+        width: 32%; /* Set the width to 40% */
+        background-color: white;
+        flex-direction: column;
+        border: 1px solid #ddd;
+        padding: 10px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+    .nav_bar a {
+        padding: 8px 12px;
+        text-align: left;
+        font-size: 0.8rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    .nav_bar a:hover {
+        background-color: rgb(240, 240, 240);
+        color: rgb(81, 81, 240);
+    }
+    
+    .dropdown a{
+        padding: 8px 12px;
+        text-align: left;
+        font-size: 0.8rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown_content a:hover {
+        background-color: rgb(240, 240, 240);
+        color: rgb(81, 81, 240);
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .hamburger-menu {
+        display: none; /* Hide hamburger menu for larger screens */
+    }
+
+    .nav_bar {
+        display: flex; /* Always show nav bar for larger screens */
+    }
+}
+
+#productContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Product Grid Layout */
+#productGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+/* Product Card Styling */
+.productCard {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.productCard img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Pagination Buttons */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.pagination button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+.pagination .active {
+    background-color: #0056b3;
+    font-weight: bold;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    #productGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #productGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagination button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-box {
+    flex: 1;
+    min-width: 280px;
+    margin: 10px 0;
+    /* padding: 20px; */
+}
+
+.footer-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #00bcd4;
+}
+#productbox{
+    padding-left: 100px;
+}
+
+#productbox a{
+    text-decoration: none;
+    color: #ccc;
+}
+
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-box ul li {
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+#productbox a:hover {
+    color: #00bcd4;
+    cursor: pointer;
+}
+
+.footer-box p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.map-container iframe {
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 200px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #999;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons .icon {
+    display: inline-block;
+    margin: 0 10px;
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.social-icons .icon:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+/* Footer Responsive Design */
+@media screen and (max-width: 768px) and (min-width:480px) {
+    /* Stack all footer boxes vertically */
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Create two equal columns */
+        gap: 20px;
+    }
+
+    .footer-box {
+        width: 100%; /* Make each section take full width */
+        padding: 10px 15px; /* Add spacing between sections */
+    }
+
+    #productbox {
+        padding-left: 15px; /* Reduce left padding for small screens */
+    }
+
+    .footer-box ul {
+        padding-left: 20px; /* Indent the list items slightly */
+    }
+
+    .footer-box ul li {
+        margin-bottom: 6px; /* Adjust spacing between items */
+    }
+
+    .footer-box p {
+        line-height: 1.5; /* Adjust line spacing for readability */
+    }
+
+    .map-container iframe {
+        width: 90%; /* Ensure map fits screen width */
+        height: 200px;
+        margin-top: 10px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .social-icons .icon {
+        margin: 0 5px; /* Adjust spacing between social icons */
+        font-size: 16px; /* Make icons slightly larger */
+    }
+}
+@media screen and (max-width: 479px){
+    /* Stack all footer boxes vertically */
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Create two equal columns */
+        /* gap: 20px; */
+    }
+
+    .footer-box {
+        width: 100%; /* Make each section take full width */
+        padding: 10px 15px; /* Add spacing between sections */
+    }
+
+    #productbox {
+        padding-left: 15px; /* Reduce left padding for small screens */
+    }
+
+    .footer-box ul {
+        padding-left: 20px; /* Indent the list items slightly */
+    }
+
+    .footer-box ul li {
+        margin-bottom: 6px; /* Adjust spacing between items */
+    }
+
+    .footer-box p {
+        line-height: 1.5; /* Adjust line spacing for readability */
+    }
+
+    .map-container iframe {
+        width: 90%; /* Ensure map fits screen width */
+        height: 200px;
+        margin-top: 10px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .social-icons .icon {
+        margin: 0 5px; /* Adjust spacing between social icons */
+        font-size: 16px; /* Make icons slightly larger */
+    }
+}
+@media screen and (max-width: 1024px) and (min-width:769px) {
+    .footer-container {
+        flex-wrap: wrap; /* Ensure content wraps neatly */
+        justify-content: space-around; /* Maintain spacing between sections */
+        padding: 10px 20px; /* Add appropriate padding */
+    }
+
+    .footer-box {
+        flex: 1; /* Allow sections to grow evenly */
+        min-width: 300px; /* Ensure minimum width for readability */
+        margin: 15px 0; /* Add vertical spacing between sections */
+    }
+
+    #productbox {
+        padding-left: 50px; /* Reduce padding for balanced spacing */
+    }
+
+    .footer-box ul {
+        padding-left: 25px; /* Slight indent for list items */
+    }
+
+    .footer-box ul li {
+        margin-bottom: 8px; /* Maintain spacing between list items */
+    }
+
+    .footer-box h3 {
+        font-size: 20px; /* Slightly increase heading size for emphasis */
+    }
+
+    .footer-box p {
+        line-height: 1.6; /* Ensure readability */
+        font-size: 14px; /* Adjust font size for consistency */
+    }
+
+    .map-container h3{
+        padding-left: 48%;
+    }
+    .map-container iframe {
+        width: 100%; /* Utilize available space */
+        height: 220px; /* Adjust height slightly for balance */
+        padding: 0 20%;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid #555; /* Keep border consistent */
+        padding-top: 15px; /* Adjust spacing above text */
+    }
+
+    .footer-bottom p {
+        color: #bbb; /* Subtle color adjustment for text */
+    }
+
+    .social-icons {
+        margin-top: 15px;
+        text-align: center; /* Align icons centrally */
+    }
+
+    .social-icons .icon {
+        margin: 0 8px; /* Adjust spacing between icons */
+        font-size: 18px; /* Slightly larger for better visibility */
+    }
+
+    /* Add hover effect to maintain design consistency */
+    .social-icons .icon:hover {
+        color: #00bcd4; /* Match hover color */
+    }
+}

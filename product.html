@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <header>
+        <div id="headercontent">
+            <!-- Logo -->
+            <img src="PHARMA_ART_LOGO__2_-removebg-preview (2).png" alt="logo" id="logoimg">
+    
+            <!-- Hamburger Menu (Hidden on Desktop) -->
+            <div class="hamburger-menu" id="hamburger">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+    
+            <!-- Navigation Bar -->
+            <nav class="nav_bar">
+                <a href="home.html" target="_top" id="headeranchor">Home</a>
+                <a href="aboutus.html" target="_top" id="headeranchor">About Us</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown_button" id="headeranchor">Our Range</a>
+                    <div class="dropdown_content">
+                        <a href="tablet.html" target="_top" id="headeranchor">Tablets</a>
+                        <a href="capsule.html" target="_top" id="headeranchor">Capsules</a>
+                        <a href="syrup.html" target="_top" id="headeranchor">Syrups</a>
+                        <a href="ointment.html" target="_top" id="headeranchor">Ointments</a>
+                        <a href="injection.html" target="_top" id="headeranchor">Injections</a>
+                        <a href="other.html" target="_top" id="headeranchor">Others</a>
+                    </div>
+                </div>
+                <a href="product.html" id="headeranchor">Products</a>
+                <a id="goToFooter">Contacts</a>
+            </nav>
+        </div>
+    </header>
+    <div id="productContainer">
+        <!-- Product Grid -->
+        <div id="productGrid"></div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination" id="paginationControls"></div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <!-- Products Section -->
+            <div class="footer-box"  id="productbox">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="tablet.html">Tablets</a></li>
+                    <li><a href="capsule.html">Capsules</a></li>
+                    <li><a href="syrup.html">Syrups</a></li>
+                    <li><a href="ointment.html">Ointments</a></li>
+                    <li><a href="injection.html">Injections</a></li>
+                    <li><a href="other.html">Others</a></li>
+                </ul>
+            </div>
+
+            <!-- About Us Section -->
+            <div class="footer-box">
+                <h3>About Us</h3>
+                <p>
+                    PHARMAART has grown to become one of India's most respected pharmaceutical companies.
+                </p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-box">
+                <h3>Contact Us</h3>
+                <p>SHOWROOM NO-1, OM SAI COMPLEX SAI ROAD , VILLAGE GULLARWALA, BADDI-DIST-SOLAN(HP)-173205, INDIA.</p>
+                <p>Email: <a href="mailto:info.pharmaart@gmail.com" style="color: white;">info.pharmaart@gmail.com</a></p>
+                <p>Phone: +91 9034320009,+91 9466987979, +91 8219123027</p>
+            </div>
+            <div class="footer-box map-container">
+                <h3>Find Us</h3>
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3421.7074143747222!2d76.81065541093916!3d30.950735174373328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ff55fbe59345d%3A0xaea4bfba73fc7db7!2sPHARMA%20ART!5e0!3m2!1sen!2sus!4v1735287952902!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3421.7074143747222!2d76.81065541093916!3d30.950735174373328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ff55fbe59345d%3A0xaea4bfba73fc7db7!2sPHARMA%20ART!5e0!3m2!1sen!2sus!4v1735287952902!5m2!1sen!2su"
+                    width="100%" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pharma Art. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/info.pharmaart/profilecard/?igsh=MXFoMnJndm5taDNwdQ==" class="icon linkedin" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/share/15mWMEjUt7/" class="icon facebook" target="_blank">Facebook</a>
+                <a href="https://company.pharmahopers.com/pharma-art" class="icon twitter" target="_blank">PharmHopper</a>
+                <a href="http://wa.me/8219123027" target="_blank" class="icon">Whatsapp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navBar = document.querySelector('.nav_bar');
+    
+        hamburger.addEventListener('click', () => {
+            navBar.classList.toggle('show'); // Toggle visibility of the nav bar
+        });
+    </script>
+    <script>
+        // Array of product image URLs
+        const productImages = [
+            './products//allplex-forte.png', './products/allplex-l.png', './products/amikafit.png', './products/anal-ok.png', 
+            './products/arprot dha.png', './products/aurclav ds.png', './products/aurclav-625.png','./products/AURCLAV KID FORTE.png','./products/aurmox-500.png', 
+            './products/bieliv-300.png', './products/bieliv.png', './products/cet-10.png', './products/coldpar ds.png', 
+            './products/coldpar.png', './products/coolant mps.png', './products/coolant-p.png', './products/cyphept.png',
+            './products/dikofit.png', './products/dr dent fresh.png','./products/TOOTHPASTE.png', './products/fitaz.png',
+            './products/fitcef s.png', './products/fitcef.png', './products/fitmero.png', './products/fitpee.png',
+            './products/fitset.png', './products/golden cap.png', './products/golden oil.png', './products/hairgain.png',
+            './products/itracand.png', './products/kadak cap.png', './products/kadak oil.png', './products/mefodol-pds.png',
+            './products/nandofit-25.png','./products/nandofit-50.png','./products/ondysis syp.png','./products/ondysis.png','./products/OMMEART D3.png',
+            './products/p cof-a.png','./products/p-bend.png','./products/p-cof br.png','./products/p-cof d.png',
+            './products/p-cof ls.png','./products/p-gest sr.png','./products/pargesic.png','./products/pbend +.png',
+            './products/pedoxil 50.png','./products/pedoxil-100.png','./products/pedoxil-200.png','./products/d3 nano shot.png','./products/peecal d3.png',
+            './products/peecal drops.png','./products/peeclo-sp.png','./products/peecort-6.png','./products/peederm +.png',
+            './products/peederm-5.png','./products/peederm-gm.png','./products/peeecaal-500.png','./products/PEECAL K27.png','./products/peeecort.png',
+            './products/peefer xt.png','./products/peefer-xt.png','./products/peegesic.png','./products/peeket.png','./products/PEELANZ.png',
+            './products/peerax-25.png','./products/peerax.png','./products/peesone-ht.png','./products/peevitigin gummies.png','./products/PEEVITGIN CAPSULE.png',
+            './products/peexim ds.png','./products/peexim-200.png','./products/peexim-o.png','./products/peezole-20.png',
+            './products/peezole-d.png','./products/peppan-dsr.png','./products/peterb-250.png','./products/picoart.png',
+            './products/plate o boost.png','./products/pmet g2.png','./products/poff-200.png'
+            ,'./products/poff-ms.png','./products/poff-oz.png','./products/pthro.png','./products/rp mont lc.png',
+            './products/rp sec dsr.png','./products/rp zyme.png','./products/rp-dsr.png','./products/rp-nim.png',
+            './products/rpdine.png','./products/rpmont-lc.png','./products/stoliser.png','./products/TELMISART.png','./products/utri-ok.png','./products/zyme hep.png'    ];
+
+        const productsPerPage = 16; // Products displayed per page
+        let currentPage = 1;
+
+        function renderProducts() {
+            const productGrid = document.getElementById('productGrid');
+            productGrid.innerHTML = ''; // Clear the grid for rendering
+
+            // Calculate the products to show on the current page
+            const start = (currentPage - 1) * productsPerPage;
+            const end = start + productsPerPage;
+            const productsToShow = productImages.slice(start, end);
+
+            // Create product cards
+            productsToShow.forEach(image => {
+                const productCard = document.createElement('div');
+                productCard.className = 'productCard';
+                productCard.innerHTML = `<img src="${image}" alt="Product Image">`;
+                productGrid.appendChild(productCard);
+            });
+        }
+
+        function renderPagination() {
+            const paginationControls = document.getElementById('paginationControls');
+            paginationControls.innerHTML = ''; // Clear existing buttons
+
+            const totalPages = Math.ceil(productImages.length / productsPerPage);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                button.className = i === currentPage ? 'active' : '';
+                button.addEventListener('click', () => {
+                    currentPage = i;
+                    renderProducts();
+                    renderPagination();
+                });
+                paginationControls.appendChild(button);
+            }
+        }
+
+        // Initial Render
+        renderProducts();
+        renderPagination();
+    </script>
+    <script src="contact.js"></script>
+</body>
+</html>

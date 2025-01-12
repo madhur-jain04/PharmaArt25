@@ -278,7 +278,8 @@ html {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: rgba(128, 222, 234, 1); /* Background color only for text section */
+    background-color:rgb(229, 241, 243) ; /* Background color only for text section */
+    /* rgba(128, 222, 234, 1) */
     color: #333; /* Text color */
 }
 

@@ -254,7 +254,7 @@ html {
 /* Main Container */
 .responsive-box {
     display: flex;
-    width: 100vw; /* Full width of the screen */
+    width: 100%; /* Full width of the screen */
     height: 600px; /* Full height of the screen */
     overflow: hidden; /* Prevent content overflow */
 }

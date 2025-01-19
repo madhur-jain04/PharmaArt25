@@ -203,7 +203,7 @@
         <div class="management-card">
           <div class="management-card-img">
             <img
-              src="https://img.freepik.com/premium-photo/medicine-pill-capsules-fallling-with-blue-background-healthcare-medical-3d-illustration-background_518421-472.jpg"
+              src="Vikasimage.jpg"
               alt=""
             />
           </div>
@@ -220,7 +220,7 @@
         <div class="management-card">
           <div class="management-card-img">
             <img
-              src="https://img.freepik.com/premium-photo/medicine-pill-capsules-fallling-with-blue-background-healthcare-medical-3d-illustration-background_518421-472.jpg"
+              src="Ajayimage.jpg"
               alt=""
             />
           </div>
@@ -289,6 +289,113 @@
             <button class="sliderbuttn" id="nextslides">&#10095;</button>
         </div>
     </div>
+    <div class="newsection">
+      <div class="form-container">
+        <h2>Post Your Requirement</h2>
+        <form
+          action="https://api.web3forms.com/submit"
+          id="contactForm"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="158178e7-5546-4b8c-8984-86230fa63eeb"
+          />
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>You are looking for?</label>
+            <div class="option-group">
+              <button
+                type="button"
+                data-value="3rd Party Manufacturing"
+                class="active"
+              >
+                3rd Party Manufacturing
+              </button>
+              <button type="button" data-value="PCD Pharma Franchise">
+                PCD Pharma Franchise
+              </button>
+            </div>
+            <input
+              type="text"
+              name="looking_for"
+              id="lookingFor"
+              value="3rd Party Manufacturing"
+              hidden
+            />
+          </div>
+          <div class="form-group">
+            <label>Requirement Emergency</label>
+            <div class="option-group">
+              <button type="button" data-value="Immediate" class="active">
+                Immediate
+              </button>
+              <button type="button" data-value="Within 15 Days">
+                Within 15 Days
+              </button>
+              <button type="button" data-value="Within a Month">
+                Within a Month
+              </button>
+            </div>
+            <input
+              type="text"
+              name="requirement_emergency"
+              id="requirementEmergency"
+              value="Immediate"
+              hidden
+            />
+          </div>
+          <div class="form-group">
+            <label>Call-Time Preference</label>
+            <div class="option-group">
+              <button type="button" data-value="Morning">Morning</button>
+              <button type="button" data-value="Afternoon">Afternoon</button>
+              <button type="button" data-value="Evening">Evening</button>
+              <button type="button" data-value="Anytime" class="active">
+                Anytime
+              </button>
+            </div>
+            <input
+              type="text"
+              name="call_time_preference"
+              id="callTimePreference"
+              value="Anytime"
+              hidden
+            />
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile No.</label>
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              placeholder="+91"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Enter your message (Do not post job)</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Enter your message here..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">NEXT</button>
+        </form>
+      </div>
+    </div>
     <footer id="footer">
         <div class="footer-container">
             <!-- Products Section -->
@@ -343,7 +450,43 @@
             </div>
         </div>
     </footer>
+    <script>
+      const buttons = document.querySelectorAll(".option-group button");
+      const lookingForInput = document.getElementById("lookingFor");
+      const requirementEmergencyInput = document.getElementById(
+        "requirementEmergency"
+      );
+      const callTimePreferenceInput =
+        document.getElementById("callTimePreference");
 
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const group = button.parentElement;
+          group
+            .querySelectorAll("button")
+            .forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          // Update hidden input field based on the active button
+          if (group.parentElement.querySelector("input")) {
+            group.parentElement.querySelector("input").value =
+              button.dataset.value;
+          }
+        });
+      });
+
+      // Form submission (optional handling)
+      const form = document.getElementById("requirementForm");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        console.log(
+          "Form Data Submitted:",
+          Object.fromEntries(formData.entries())
+        );
+        // Use your API to send form data
+      });
+    </script>
     <script>
         const hamburger = document.getElementById('hamburger');
         const navBar = document.querySelector('.nav_bar');

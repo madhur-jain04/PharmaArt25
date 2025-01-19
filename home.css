@@ -729,10 +729,17 @@ html {
     position: relative;
     top: -6rem;
 }
-.management-card-img img{
+.management-card-img {
     width: 100%;
+    height: 100%; /* Keep the height fixed for uniformity */
+    overflow: hidden; /* Prevent overflow */
     border-radius: 2rem 2rem 0 0;
-    object-fit: cover;
+}
+
+.management-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image covers the container while maintaining aspect ratio */
 }
 
 .management-card-content{
@@ -762,6 +769,7 @@ html {
     justify-content: center;
     align-items: center;
     font-size: 16px;
+    cursor: pointer;
 
 }
 .management-card-content button:hover{
@@ -913,6 +921,173 @@ html {
         right: 0;
     }
 }
+.newsection{
+    font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      width: 100%;
+      max-width: 800px;
+      border: 2px solid #0066cc;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+    }
+
+    .form-container h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: white;
+      text-align: center;
+      background-color: #0066cc;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+      }
+  
+      .form-group label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+        font-weight: bold;
+      }
+  
+      .form-group input[type="text"],
+      .form-group input[type="tel"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+  
+      .form-group .option-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+  
+      .form-group .option-group button {
+        padding: 10px 15px;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        flex: 1;
+      }
+  
+      .form-group .option-group button.active {
+        background-color: #0066cc;
+        color: white;
+        border-color: #0066cc;
+      }
+  
+      .form-group input[type="tel"] {
+        padding-left: 35px;
+      }
+  
+      .form-group .flag {
+        position: relative;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-color: #f4f4f4;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/1280px-Flag_of_India.svg.png');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+  
+      .form-group textarea {
+        width: 100%;
+        height: 80px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: none;
+        box-sizing: border-box;
+      }
+  
+      .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #ff6600;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      .submit-btn:hover {
+        background-color: #e65c00;
+      }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .form-container {
+        max-width: 90%;
+        padding: 15px;
+      }
+
+      .form-group .option-group button {
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      .submit-btn {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+
+      .form-container {
+        margin: 15px;
+        padding: 15px;
+      }
+
+      .form-group .option-group {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .form-group .option-group button {
+        width: 100%;
+        text-align: center;
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="tel"],
+      .form-group textarea {
+        font-size: 12px;
+      }
+
+      .submit-btn {
+        font-size: 12px;
+      }
+    }
 footer {
     background-color: #333;
     color: #fff;
